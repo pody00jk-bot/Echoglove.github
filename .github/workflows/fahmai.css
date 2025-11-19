@@ -1,0 +1,80 @@
+/* ✨ Apple style text block */
+.apple-text-block {
+    text-align: center;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", sans-serif;
+}
+
+.apple-text-block h2 {
+    font-size: 1.9rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #1d1d1f; /* Apple black */
+    margin-bottom: 16px;
+}
+
+.apple-text-block p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #6e6e73; /* Apple gray */
+}
+
+/* ✨ Reveal Animation (เหมือน Apple เลื่อนขึ้น + จางขึ้น) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* จอแนวนอนที่เตี้ย เช่น iPad / มือถือแนวนอน */
+@media screen and (max-height: 700px) and (orientation: landscape) {
+
+  /* เปลี่ยน hero เป็น layout แบบ centered */
+  .hero {
+    flex-direction: row;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    height: auto;
+  }
+
+  .hero-left {
+    text-align: left;
+    max-width: 480px;
+  }
+
+  .product {
+    width: 40vw;
+  }
+
+  /* GRID ให้เป็น 1 คอลัมน์ในแนวนอน เพื่อไม่ให้เบียด */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  /* PANEL แบบ Apple — จัดกึ่งกลางให้เนียน */
+  .panel, 
+  .apple-text-block {
+    max-width: 700px !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* ข้อความ Apple ใน landscape ให้ไม่ยาวเกิน */
+  .apple-text-block h2 {
+    font-size: 1.7rem;
+  }
+
+  .apple-text-block p {
+    font-size: 1rem;
+  }
+}
